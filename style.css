@@ -1,0 +1,456 @@
+/* ==========================================================================
+   PALETA: "Revista Científica"
+   Fondo: Crema / Blanco papel (#faf8f5)
+   Texto: Tinta profunda (#1a1a2e)
+   Acento Física: Azul académico (#1d4ed8)
+   Acento Química: Burdeos (#9f1239)
+   Borde / Líneas: Gris cálido (#d6d0c8)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --paper-bg: #faf8f5;
+    --paper-alt: #f0ede8;
+    --ink-deep: #1a1a2e;
+    --ink-mid: #3d3d56;
+    --ink-light: #7a7a94;
+    --fisica-blue: #1d4ed8;
+    --fisica-light: #dbeafe;
+    --quimica-red: #9f1239;
+    --quimica-light: #ffe4e6;
+    --rule-color: #d6d0c8;
+    --rule-dark: #a8a29e;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--paper-bg);
+    color: var(--ink-deep);
+    font-family: 'Source Serif 4', Georgia, serif;
+    line-height: 1.75;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ── CABECERA ── */
+.main-header {
+    background-color: var(--ink-deep);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0;
+    border-bottom: 3px solid var(--fisica-blue);
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.logo h1 span {
+    color: #93c5fd;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 0;
+}
+
+.main-nav ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-left: 1px solid #334155;
+    transition: color 0.2s, background-color 0.2s;
+    display: block;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.nav-active {
+    color: var(--white);
+    background-color: rgba(255,255,255,0.08);
+}
+
+/* ── HERO ── */
+.hero-section {
+    background-color: var(--ink-deep);
+    padding: 70px 0 50px;
+    text-align: center;
+    border-bottom: 6px double var(--rule-dark);
+}
+
+.hero-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+}
+
+.hero-tagline {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #94a3b8;
+    max-width: 620px;
+    margin: 0 auto 30px;
+}
+
+.hero-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #475569;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.hero-rule::before,
+.hero-rule::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: #475569;
+}
+
+/* ── GRID PRINCIPAL ── */
+.grid-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 50px 0 60px;
+    border: 1px solid var(--rule-color);
+}
+
+/* ── TARJETAS ── */
+.card-topic {
+    padding: 35px 35px 30px;
+    position: relative;
+    background-color: var(--white);
+    transition: background-color 0.2s;
+}
+
+.card-topic:first-child {
+    border-right: 1px solid var(--rule-color);
+}
+
+.card-topic:hover {
+    background-color: var(--paper-bg);
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.label-fisica {
+    background-color: var(--fisica-light);
+    color: var(--fisica-blue);
+    border-left: 3px solid var(--fisica-blue);
+}
+
+.label-quimica {
+    background-color: var(--quimica-light);
+    color: var(--quimica-red);
+    border-left: 3px solid var(--quimica-red);
+}
+
+.card-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 8px;
+    color: var(--ink-deep);
+}
+
+.author-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: var(--ink-light);
+    margin-bottom: 14px;
+    letter-spacing: 0.03em;
+}
+
+.card-body > p {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    margin-bottom: 24px;
+}
+
+.featured-link-box {
+    border-top: 1px solid var(--rule-color);
+    padding-top: 16px;
+}
+
+.link-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: letter-spacing 0.2s;
+}
+
+.link-btn:hover {
+    letter-spacing: 0.08em;
+}
+
+.btn-fisica { color: var(--fisica-blue); }
+.btn-quimica { color: var(--quimica-red); }
+
+/* ── PIE DE PÁGINA ── */
+.main-footer {
+    text-align: center;
+    padding: 28px 0;
+    border-top: 3px double var(--rule-dark);
+    background-color: var(--ink-deep);
+    color: #64748b;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* ── ARTÍCULO ── */
+.container-article {
+    max-width: 780px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+.scientific-article {
+    background-color: var(--white);
+    border: 1px solid var(--rule-color);
+    border-top: 4px solid var(--ink-deep);
+}
+
+.article-meta-header {
+    padding: 36px 48px 24px;
+    border-bottom: 1px solid var(--rule-color);
+}
+
+.article-meta-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 14px 0 16px;
+    color: var(--ink-deep);
+}
+
+.author-info {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    color: var(--ink-light);
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.author-info::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background-color: var(--rule-dark);
+}
+
+.article-illustration {
+    background-color: var(--paper-alt);
+    border-bottom: 1px solid var(--rule-color);
+    padding: 30px 48px;
+    text-align: center;
+}
+
+.article-illustration img {
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--rule-color);
+    background-color: var(--white);
+    padding: 8px;
+}
+
+.article-text {
+    padding: 36px 48px;
+    columns: 1;
+}
+
+.article-text p {
+    font-size: 1.05rem;
+    color: var(--ink-mid);
+    margin-bottom: 22px;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.article-text p:first-child::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    float: left;
+    line-height: 0.8;
+    margin: 6px 10px 0 0;
+    color: var(--ink-deep);
+}
+
+.article-list {
+    margin: 0 0 22px 20px;
+    color: var(--ink-mid);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.article-list li {
+    margin-bottom: 8px;
+}
+
+.article-sources {
+    margin: 0;
+    border-top: 1px solid var(--rule-color);
+    background-color: var(--paper-alt);
+    padding: 24px 48px;
+}
+
+.article-sources h5 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 10px;
+}
+
+.article-sources ul {
+    list-style: none;
+    padding: 0;
+}
+
+.article-sources ul li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    padding: 3px 0;
+    border-bottom: 1px dotted var(--rule-color);
+}
+
+.article-sources ul li a {
+    color: var(--fisica-blue);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.article-sources ul li a:hover {
+    text-decoration: underline;
+}
+
+.navigation-footer {
+    padding: 24px 48px;
+    border-top: 1px solid var(--rule-color);
+}
+
+.btn-return {
+    display: inline-block;
+    padding: 9px 20px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-ret-fisica {
+    border: 1px solid var(--fisica-blue);
+    color: var(--fisica-blue);
+}
+.btn-ret-fisica:hover {
+    background-color: var(--fisica-blue);
+    color: var(--white);
+}
+
+.btn-ret-quimica {
+    border: 1px solid var(--quimica-red);
+    color: var(--quimica-red);
+}
+.btn-ret-quimica:hover {
+    background-color: var(--quimica-red);
+    color: var(--white);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .grid-sections {
+        grid-template-columns: 1fr;
+    }
+    .card-topic:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--rule-color);
+    }
+    .header-flex {
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px 0;
+    }
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+    .article-meta-header,
+    .article-illustration,
+    .article-text,
+    .article-sources,
+    .navigation-footer {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+    .article-meta-header h2 {
+        font-size: 1.8rem;
+    }
+}
